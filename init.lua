@@ -1,7 +1,4 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+
 -- LAZY CONFIG
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -25,7 +22,6 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-vim.keymap.set('i', 'jk', '<Esc>', { noremap = true, silent = true })
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -36,7 +32,5 @@ require("lazy").setup({
 })
 -- END LAZY CONFIG
 
---Neo-tree config
-vim.keymap.set('n', '<C-b>', ':Neotree toggle<CR>')
 
 

@@ -1,35 +1,4 @@
 return {
-    -- add your plugins here
-   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
-    {"nvim-treesitter/nvim-treesitter", 
-    build = ":TSUpdate", config = function () 
-      local configs = require("nvim-treesitter.configs")
-
-      configs.setup({
-          ensure_installed = { 
-				"c", 
-				"lua", 
-				"vim", 
-				"vimdoc",     
-				"html",
-				"css",
-				"javascript",
-				"typescript",
-    				"json",
-    				"lua",
-    				"bash",
-    				"markdown",
-    				"yaml",
-    				"graphql",
-    				"prisma"
-					},
-          sync_install = false,
-          highlight = { enable = true },
-          indent = { enable = true },  
-        })
-    end
-    },
-    {
      "nvim-neo-tree/neo-tree.nvim",
      branch = "v3.x",
      dependencies = {
@@ -38,11 +7,12 @@ return {
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
-      config = function()
+    config = function()
+      vim.keymap.set('n', '<C-b>', ':Neotree toggle<CR>')
       require("neo-tree").setup({
         window = {
-         mappings = {
-           ["<C-b>"] = "close_window",  -- Remap Ctrl + b to close NeoTree
+        mappings = {
+          ["<C-b>"] = "close_window",  -- Remap Ctrl + b to close NeoTree
 --            ["<CR>"] = function(state)
 --        -- Get the node (file or directory) that is currently selected
 --        local node = state.tree:get_node()
@@ -55,9 +25,8 @@ return {
 --          state.commands["toggle_node"](state)
 --        end
 --      end
+            }
           }
-        }
-      })
+        })
       end
-    }
 }
