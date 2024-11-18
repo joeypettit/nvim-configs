@@ -1,3 +1,4 @@
+require("vim-options")
 
 -- LAZY CONFIG
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
