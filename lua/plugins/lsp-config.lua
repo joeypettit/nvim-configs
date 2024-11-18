@@ -48,26 +48,26 @@ return {
         vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
+        vim.keymap.set("n", "<C-.>", vim.lsp.buf.code_action, bufopts)
       end
 
       -- Configure each language server
-      lspconfig.lua_ls.setup { on_attach = on_attach }
-      lspconfig.bashls.setup { on_attach = on_attach }
-      lspconfig.tailwindcss.setup { on_attach = on_attach }
-      lspconfig.cssls.setup { on_attach = on_attach }
-      lspconfig.docker_compose_language_service.setup { on_attach = on_attach }
-      lspconfig.dockerls.setup { on_attach = on_attach }
-      lspconfig.gradle_ls.setup { on_attach = on_attach }
-      lspconfig.graphql.setup { on_attach = on_attach }
       lspconfig.html.setup { on_attach = on_attach }
       lspconfig.eslint.setup { on_attach = on_attach }
       lspconfig.ts_ls.setup { on_attach = on_attach }
       lspconfig.jsonls.setup { on_attach = on_attach }
-      lspconfig.grammarly.setup { on_attach = on_attach }
+      lspconfig.lua_ls.setup { on_attach = on_attach }
+      lspconfig.tailwindcss.setup { on_attach = on_attach }
+      lspconfig.cssls.setup { on_attach = on_attach }
       lspconfig.prismals.setup { on_attach = on_attach }
-      lspconfig.pyright.setup { on_attach = on_attach }
+      lspconfig.graphql.setup { on_attach = on_attach }
       lspconfig.sqlls.setup { on_attach = on_attach }
+      lspconfig.bashls.setup { on_attach = on_attach }
+      lspconfig.docker_compose_language_service.setup { on_attach = on_attach }
+      lspconfig.dockerls.setup { on_attach = on_attach }
+      lspconfig.gradle_ls.setup { on_attach = on_attach }
+      lspconfig.grammarly.setup { on_attach = on_attach }
+      lspconfig.pyright.setup { on_attach = on_attach }
       lspconfig.vimls.setup { on_attach = on_attach }
       lspconfig.lemminx.setup { on_attach = on_attach }
       lspconfig.yamlls.setup { on_attach = on_attach }
