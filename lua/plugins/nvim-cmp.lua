@@ -1,8 +1,11 @@
 return {
   "hrsh7th/nvim-cmp",
   opts = function(_, opts)
+    vim.notify("CMP RUNNING")
     local cmp = require("cmp")
-
+    opts.experimental = {
+      ghost_text = false,
+    }
     opts.mapping = cmp.mapping.preset.insert({
       ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion
       ["<C-j>"] = cmp.mapping(function(fallback)
