@@ -1,7 +1,0 @@
-{
-  "lspconfig": {
-    "eslint": {
-      "disabled": true
-    }
-  }
-}
